@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shopping_app/constants.dart';
 import 'package:shopping_app/models/product.dart';
+import 'package:shopping_app/screens/widgets/color_widget.dart';
 
 class DetailScreen extends StatelessWidget {
   final Product product;
@@ -51,10 +52,11 @@ class DetailScreen extends StatelessWidget {
           height: size.height,
           child: Stack(
             children: [
-              //Stack/white field
+              //Stack
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  //Stack/product color
                   Expanded(
                     flex: 1,
                     child: Padding(
@@ -87,7 +89,7 @@ class DetailScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  //Spacer(),
+                  //Stack/white field,
                   Expanded(
                     flex: 2,
                     child: Container(
@@ -97,6 +99,13 @@ class DetailScreen extends StatelessWidget {
                             topLeft: Radius.circular(23),
                             topRight: Radius.circular(23),
                           )),
+                      child: Column(
+                        children: [
+                          Row(
+                              //colors and size widget
+                              children: [ColorWidget()])
+                        ],
+                      ),
                     ),
                   )
                 ],
