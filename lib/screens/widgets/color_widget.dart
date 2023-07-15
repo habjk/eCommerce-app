@@ -12,10 +12,15 @@ class _ColorWidgetState extends State<ColorWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 20, left: 20),
+      //margin: EdgeInsets.only(top: 20, left: 20),
       child: Column(
         mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          Text("Color"),
+          SizedBox(
+            height: 5,
+          ),
           Row(
             children: [
               ColorDot(

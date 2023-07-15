@@ -101,9 +101,23 @@ class DetailScreen extends StatelessWidget {
                           )),
                       child: Column(
                         children: [
-                          Row(
-                              //colors and size widget
-                              children: [ColorWidget()])
+                          Container(
+                            margin: EdgeInsets.only(top: 60),
+                            padding: EdgeInsets.symmetric(horizontal: 25),
+                            child: Row(children: [
+                              Expanded(child: ColorWidget()),
+                              Expanded(
+                                child: Text.rich(TextSpan(children: [
+                                  TextSpan(text: "Size\n"),
+                                  WidgetSpan(child: SizedBox(height: 10)),
+                                  TextSpan(
+                                      text: "${product.size} cm",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold))
+                                ])),
+                              )
+                            ]),
+                          )
                         ],
                       ),
                     ),
