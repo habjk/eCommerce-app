@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shopping_app/constants.dart';
 import 'package:shopping_app/models/product.dart';
 import 'package:shopping_app/screens/widgets/color_and_size_widget.dart';
 import 'package:shopping_app/screens/widgets/counter_widget.dart';
 import 'package:shopping_app/screens/widgets/description_widget.dart';
 import 'package:shopping_app/screens/widgets/like_widget.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class DetailScreen extends StatelessWidget {
   final Product product;
@@ -117,6 +117,25 @@ class DetailScreen extends StatelessWidget {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [Counter(), Like()],
+                            ),
+                            SizedBox(height: 20),
+                            Row(
+                              children: [
+                                Container(
+                                  height: 50,
+                                  width: 60,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(15),
+                                      border: Border.all(color: product.color)),
+                                  child: IconButton(
+                                    onPressed: () {},
+                                    icon: SvgPicture.asset(
+                                      "assets/icons/add_to_cart.svg",
+                                    ),
+                                  ),
+                                ),
+                                //elevated
+                              ],
                             )
                           ],
                         ),

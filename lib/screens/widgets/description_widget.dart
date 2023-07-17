@@ -10,6 +10,7 @@ class Descrption extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(description);
+    return Text(description,
+        style: TextStyle(fontSize: 15, color: Colors.black));
   }
 }
