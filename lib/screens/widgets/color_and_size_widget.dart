@@ -24,33 +24,35 @@ class _ColorAndSizeWidgetState extends State<ColorAndSizeWidget> {
               SizedBox(
                 height: 5,
               ),
-              Row(
-                children: [
-                  ColorDot(
-                      selectedColor: colorType,
-                      index: 1,
-                      color: Colors.blue,
-                      onTap: () {
-                        colorType = 1;
-                        setState(() {});
-                      }),
-                  ColorDot(
-                      selectedColor: colorType,
-                      index: 2,
-                      color: Colors.amber,
-                      onTap: () {
-                        colorType = 2;
-                        setState(() {});
-                      }),
-                  ColorDot(
-                      selectedColor: colorType,
-                      index: 3,
-                      color: Colors.grey,
-                      onTap: () {
-                        colorType = 3;
-                        setState(() {});
-                      })
-                ],
+              Expanded(
+                child: Row(
+                  children: [
+                    ColorDot(
+                        selectedColor: colorType,
+                        index: 1,
+                        color: Colors.blue,
+                        onTap: () {
+                          colorType = 1;
+                          setState(() {});
+                        }),
+                    ColorDot(
+                        selectedColor: colorType,
+                        index: 2,
+                        color: Colors.amber,
+                        onTap: () {
+                          colorType = 2;
+                          setState(() {});
+                        }),
+                    ColorDot(
+                        selectedColor: colorType,
+                        index: 3,
+                        color: Colors.grey,
+                        onTap: () {
+                          colorType = 3;
+                          setState(() {});
+                        })
+                  ],
+                ),
               )
             ],
           ),
