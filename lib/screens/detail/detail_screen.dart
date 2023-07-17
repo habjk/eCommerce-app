@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shopping_app/constants.dart';
 import 'package:shopping_app/models/product.dart';
-import 'package:shopping_app/screens/widgets/color_widget.dart';
+import 'package:shopping_app/screens/widgets/color_and_size_widget.dart';
+import 'package:shopping_app/screens/widgets/counter_widget.dart';
+import 'package:shopping_app/screens/widgets/description_widget.dart';
+import 'package:shopping_app/screens/widgets/like_widget.dart';
 
 class DetailScreen extends StatelessWidget {
   final Product product;
@@ -99,26 +102,24 @@ class DetailScreen extends StatelessWidget {
                             topLeft: Radius.circular(23),
                             topRight: Radius.circular(23),
                           )),
-                      child: Column(
-                        children: [
-                          Container(
-                            margin: EdgeInsets.only(top: 60),
-                            padding: EdgeInsets.symmetric(horizontal: 25),
-                            child: Row(children: [
-                              Expanded(child: ColorWidget()),
-                              Expanded(
-                                child: Text.rich(TextSpan(children: [
-                                  TextSpan(text: "Size\n"),
-                                  WidgetSpan(child: SizedBox(height: 10)),
-                                  TextSpan(
-                                      text: "${product.size} cm",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold))
-                                ])),
-                              )
-                            ]),
-                          )
-                        ],
+                      child: Padding(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: kDefaultPadding),
+                        child: Column(
+                          children: [
+                            Container(
+                                margin: EdgeInsets.only(top: 60),
+                                child: ColorAndSizeWidget(
+                                    productSize: product.size)),
+                            SizedBox(height: 20),
+                            Descrption(description: product.description),
+                            SizedBox(height: 20),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [Counter(), Like()],
+                            )
+                          ],
+                        ),
                       ),
                     ),
                   )
